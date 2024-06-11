@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import SingleCards from "./components/SingleCards";
+
+const cardImages = [
+  { src: "./public/chariot.png" },
+  { src: "./public/fool.png" },
+  { src: "./public/judgement.png" },
+  { src: "./public/magican.png" },
+  { src: "./public/strength.png" },
+  { src: "./public/tower.png" },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cards, setCards] = useState([]);
+  const [turns, setTurns] = useState(0);
 
+  const shuffleCards = () => {
+    const shuffledCards = [...cardImages, ...cardImages]
+      .sort(() => Math.random() - 0.5)
+      .map((card) => ({ ...card, id: Math.random() }));
+    // console.log(shufflecards);
+    setCards(shuffledCards);
+    setTurns(0);
+  };
+
+  console.log(cards, turns);
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="main">
+        <h1>Magic Card Game</h1>
+        <button onClick={shuffleCards}>New Game</button>
+        <div className="card-grid">
+          {cards.map((card) => (
+            <SingleCards card={card} key={card.id}/>
+          ))}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
