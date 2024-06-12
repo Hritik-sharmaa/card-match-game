@@ -7,12 +7,12 @@ import matchSound from "./assets/sounds/match.mp3";
 import winSound from "./assets/sounds/win.mp3";
 
 const cardImages = [
-  { src: "./src/assets/chariot.png", matched: false },
-  { src: "./src/assets/fool.png", matched: false },
-  { src: "./src/assets/judgement.png", matched: false },
-  { src: "./src/assets/magican.png", matched: false },
-  { src: "./src/assets/strength.png", matched: false },
-  { src: "./src/assets/tower.png", matched: false },
+  { src: "./src/assets/Images/chariot.png", matched: false },
+  { src: "./src/assets/Images/fool.png", matched: false },
+  { src: "./src/assets/Images/judgement.png", matched: false },
+  { src: "./src/assets/Images/magican.png", matched: false },
+  { src: "./src/assets/Images/strength.png", matched: false },
+  { src: "./src/assets/Images/tower.png", matched: false },
 ];
 
 function App() {
