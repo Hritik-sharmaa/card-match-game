@@ -1,6 +1,6 @@
 import React from "react";
 
-const SingleCards = ({ card, handleChoices, flipped, disabled }) => {
+const SingleCards = ({ card, handleChoices, flipped, disabled, vibrating }) => {
   const handleClick = () => {
     if (!disabled) {
       handleChoices(card);
@@ -8,7 +8,11 @@ const SingleCards = ({ card, handleChoices, flipped, disabled }) => {
   };
 
   return (
-    <div className={`card ${flipped ? "flipped" : ""}`} onClick={handleClick}>
+    <div
+      className={`card ${flipped ? "flipped" : ""} ${
+        vibrating ? "vibrate" : ""
+      }`}
+      onClick={handleClick}>
       <div className="inner">
         <img src={card.src} className="front" alt="card front" />
         <img

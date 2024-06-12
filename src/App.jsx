@@ -22,6 +22,8 @@ function App() {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [confetti, setConfetti] = useState(false);
+  const [isVibrating, setIsVibrating] = useState(false);
+
 
   const [playFlip] = useSound(flipSound, { html5: true });
   const [playMatch] = useSound(matchSound);
@@ -35,7 +37,7 @@ function App() {
     setChoiceTwo(null);
     setCards(shuffledCards);
     setTurns(0);
-    setConfetti(false);
+    setConfetti(false);setIsVibrating(false);
   };
 
   const handleChoices = (card) => {
@@ -48,6 +50,7 @@ function App() {
     setChoiceTwo(null);
     setTurns((prevTurns) => prevTurns + 1);
     setDisabled(false);
+    setIsVibrating(false);
   };
 
   useEffect(() => {
@@ -65,8 +68,10 @@ function App() {
           });
         });
         resetTurns();
+        
       } else {
         setTimeout(() => resetTurns(), 1000);
+        setIsVibrating(true);
       }
     }
   }, [choiceOne, choiceTwo]);
@@ -100,6 +105,7 @@ function App() {
             handleChoices={handleChoices}
             flipped={card === choiceOne || card === choiceTwo || card.matched}
             disabled={disabled}
+            vibrating={isVibrating && (card === choiceOne || card === choiceTwo)}
           />
         ))}
       </div>

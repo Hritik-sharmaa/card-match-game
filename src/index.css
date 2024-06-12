@@ -95,6 +95,16 @@ body {
   border: 2px solid rgb(0, 102, 102);
 }
 
+@keyframes vibrate {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.vibrate {
+  animation: vibrate 0.3s linear;
+}
+
 @media (max-width: 600px) {
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
