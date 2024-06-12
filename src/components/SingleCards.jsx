@@ -12,7 +12,7 @@ const SingleCards = ({ card, handleChoices, flipped, disabled }) => {
       <div className="inner">
         <img src={card.src} className="front" alt="card front" />
         <img
-          src="./src/assets/Images/card-back-cover.png"
+          src="/assets/Images/card-back-cover.png"
           className="back"
           alt="card back"
         />

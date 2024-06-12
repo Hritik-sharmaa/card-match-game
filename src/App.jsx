@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import SingleCards from "./components/SingleCards";
 import Confetti from "react-confetti";
 import useSound from "use-sound";
-import flipSound from "./assets/sounds/flipcard.wav";
-import matchSound from "./assets/sounds/match.mp3";
-import winSound from "./assets/sounds/win.mp3";
+import flipSound from "/assets/sounds/flipcard.wav";
+import matchSound from "/assets/sounds/match.mp3";
+import winSound from "/assets/sounds/win.mp3";
 
 const cardImages = [
-  { src: "./src/assets/Images/chariot.png", matched: false },
-  { src: "./src/assets/Images/fool.png", matched: false },
-  { src: "./src/assets/Images/judgement.png", matched: false },
-  { src: "./src/assets/Images/magican.png", matched: false },
-  { src: "./src/assets/Images/strength.png", matched: false },
-  { src: "./src/assets/Images/tower.png", matched: false },
+  { src: "/assets/Images/chariot.png", matched: false },
+  { src: "/assets/Images/fool.png", matched: false },
+  { src: "/assets/Images/judgement.png", matched: false },
+  { src: "/assets/Images/magican.png", matched: false },
+  { src: "/assets/Images/strength.png", matched: false },
+  { src: "/assets/Images/tower.png", matched: false },
 ];
 
 function App() {
